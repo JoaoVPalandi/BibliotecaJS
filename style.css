@@ -41,14 +41,14 @@ main {
     margin-bottom: 20px;
 }
 
-/* Grid de Resultados */
+
 #resultadosBusca {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
 
-/* Card do Livro */
+
 .livro-card {
     border: 1px solid #ddd;
     padding: 15px;
@@ -91,7 +91,7 @@ main {
     color: #721c24;
 }
 
-.btn-reservar {
+.button {
     padding: 10px 15px;
     background-color: #007bff;
     color: white;
@@ -100,12 +100,12 @@ main {
     width: 100%;
 }
 
-.btn-reservar:disabled {
+.button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
 
-.btn-reservar.reservado {
+.button.reservado {
     background-color: #28a745;
 }
 

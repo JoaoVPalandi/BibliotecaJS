@@ -67,7 +67,6 @@ function exibirLivros(livrosEncontrados) {
         }
 
         const btnReservar = document.createElement('button');
-        btnReservar.classList.add('btn-reservar');
         btnReservar.textContent = 'Reservar';
         btnReservar.setAttribute('data-id', livro.id);
         
@@ -77,11 +76,8 @@ function exibirLivros(livrosEncontrados) {
 
         btnReservar.addEventListener('click', () => {
             btnReservar.textContent = 'Reservado!';
-            
             btnReservar.disabled = true;
-            
             btnReservar.classList.add('reservado');
-            
             status.textContent = 'Reservado por você';
             status.classList.remove('disponivel');
             status.classList.add('reservado');
@@ -96,5 +92,4 @@ function exibirLivros(livrosEncontrados) {
         resultadosBuscar.appendChild(card);
     });
 }
-
 exibirLivros(livrosEncontrados);
