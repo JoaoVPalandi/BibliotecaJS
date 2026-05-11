@@ -1,95 +1,92 @@
-const livrosEncontrados = [
-    {
-        id: 1,
-        imagem: "https://guiadoestudante.abril.com.br/wp-content/uploads/sites/4/2019/07/os-sertc3b5es-de-euclides-da-cunha-entenda-o-conflito-relatado-no-livro.png?w=1024",
-        titulo: "Os Sertões",
-        autor: "Euclides da Cunha",
-        ano: 1902,
-        disponivel: false
-    },
-    {
-        id: 2,
-        imagem: "https://m.media-amazon.com/images/I/71zOWBGEUGL.jpg",
-        titulo: "Eu sou Malala",
-        autor: "Malala Yousafzai",
-        ano: 2013,
-        disponivel: true
-    },
-    {
-        id: 3,
-        imagem: "https://m.media-amazon.com/images/I/91NL2ftnXML._AC_UF1000,1000_QL80_.jpg",
-        titulo: "Contos Completos de Lima Barreto",
-        autor: "Lima Barreto",
-        ano: 1920,
-        disponivel: false
-    },
-    {
-        id: 4,
-        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLDJBC6K1M7x5MPIG2dU3Wp6ZHVbBGFsWRUA&s",
-        titulo: "Turma da Mônica Jovem",
-        autor: "Mauricio de Sousa",
-        ano: 2008,
-        disponivel: true
-    }
-];
+const LivrosEncontrados = [{
+    id: 1,
+    imagem: "https://images.hdqwalls.com/wallpapers/jujutsu-kaisen-sengaku-soran-4k-wz.jpg",
+    titulo: "Jujutsu kaisen",
+    autor: "Gege akutami",
+    ano: 2020,
+    disponivel: true
+},
+{
+    id: 2,
+    imagem: "https://images.wallpapersden.com/image/download/demon-slayer-team_a2xpbWeUmZqaraWkpJRpZW5rrWdoZW0.jpg",
+    titulo: "Demon slayer",
+    autor: "Koyoharu Gotouge",
+    ano: 2016,
+    disponivel: true
+},
+{
 
-function exibirLivros(livrosEncontrados) {
+    id: 3,
+    imagem: "https://teammanga.fr/wp-content/uploads/2022/09/Bleach_final_trailer.jpg",
+    titulo: "Bleach",
+    autor: "Tite kubo",
+    ano: 2001,
+    disponivel: true
+},
+{
+    id: 4,
+    imagem: "https://motionbgs.com/media/1948/naruto-and-sasuke-legends.jpg",
+    titulo: "Naruto",
+    autor: "Masashi Kishimoto",
+    ano: 1999,
+    disponivel: true
+}];
 
-    const resultadosBuscar = document.getElementById("resultadosBusca");
+function exibirLivros(LivrosEncontrados){
+    
+    const ResultadosBusca = document.getElementById("ResultadosBusca");
 
-    livrosEncontrados.forEach(livro => {
-        const card = document.createElement('div');
-        card.classList.add('livro-card');
+    LivrosEncontrados.forEach(livro => {
+        const card = document.createElement("div");
+        card.classList.add("card");
 
-        const img = document.createElement('img');
-        img.setAttribute('src', livro.imagem);
-        img.setAttribute('alt', livro.titulo);
+        const img = document.createElement("img");
+        img.setAttribute("src", livro.imagem);
 
-        const titulo = document.createElement('h3');
+        const titulo = document.createElement("h3");
         titulo.textContent = livro.titulo;
 
-        const autor = document.createElement('p');
-        autor.classList.add('autor');
+        const autor = document.createElement("p");
         autor.textContent = "Autor: " + livro.autor;
 
-        const ano = document.createElement('p');
+        const ano = document.createElement("p");
         ano.textContent = "Ano: " + livro.ano;
 
-        const status = document.createElement('p');
-        status.classList.add('status');
+        const status = document.createElement("p");
+        status.classList.add("status");
 
-        if (livro.disponivel) {
-            status.textContent = 'Disponível';
-            status.classList.add('disponivel');
-        } else {
-            status.textContent = 'Indisponível';
-            status.classList.add('indisponivel');
+        if(livro.disponivel){
+            status.textContent = "Disponivel";
+            status.classList.add("Disponivel");
+        }else{
+            status.textContent = "Indisponivel";
+            status.classList.add("Indisponivel");
         }
 
-        const btnReservar = document.createElement('button');
-        btnReservar.textContent = 'Reservar';
-        btnReservar.setAttribute('data-id', livro.id);
-        
-        if (!livro.disponivel) {
-            btnReservar.disabled = true;
+        const botao = document.createElement("button");
+        botao.textContent = "Reservar";
+        botao.setAttribute("data-id", livro.id);
+
+        if(!livro.disponivel){
+            botao.disabled = true;
         }
 
-        btnReservar.addEventListener('click', () => {
-            btnReservar.textContent = 'Reservado!';
-            btnReservar.disabled = true;
-            btnReservar.classList.add('reservado');
-            status.textContent = 'Reservado por você';
-            status.classList.remove('disponivel');
-            status.classList.add('reservado');
+        botao.addEventListener("click", () => {
+            botao.textContent = "Reservado";
+            botao.disabled = true;
+            status.textContent = "indisponivel";
+            status.classList.remove("disponivel");
+            status.classList.add("indisponivel");
         });
+        
         card.appendChild(img);
         card.appendChild(titulo);
         card.appendChild(autor);
         card.appendChild(ano);
         card.appendChild(status);
-        card.appendChild(btnReservar);
- 
-        resultadosBuscar.appendChild(card);
+        card.appendChild(botao);
+        ResultadosBusca.appendChild(card);
     });
+
 }
-exibirLivros(livrosEncontrados);
+exibirLivros(LivrosEncontrados);

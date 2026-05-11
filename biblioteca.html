@@ -1,42 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Comunitária</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva de Livros</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="container">
+  <div class="busca">
+    <input type="text" placeholder="Buscar livros...">
+  </div>
 
-    <header>
-        <h1>Biblioteca Comunitária</h1>
+  <div id="ResultadosBusca"></div>
 
-        <div class="barra-de-pesquisa">
-        <input type="text" placeholder="Buscar livros." disabled>
-        <button disabled>Buscar</button>
-        </div>
-
-    </header>
-
-    <main>
-
-        <div class="resultados-header">
-        <h2>Resultados</h2>
-        <p class="resultados-info">Mostrando livros</p>
-        </div>
-
-        <div id="resultadosBusca">
-    
-        </div>
-
-    </main>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
+
